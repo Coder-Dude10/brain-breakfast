@@ -47,7 +47,7 @@ input[type=email], select {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+button {
   width: 30%;
   background-color: #1d368a;
   color: white;
@@ -58,7 +58,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+button:hover {
   background-color: #132254;
 }
 
@@ -85,12 +85,29 @@ div {
 </div>
 
 <div>
-  <form action="/brain-success">
-    <input type="email" id="fname" placeholder="youremail@domain.com">
+  <ul id="messages"></ul>
+   <form id="form" action="/brain-success">
+    <input type="email" id="input" placeholder="youremail@domain.com">
     <br>
-    <input type="submit" value="Sign Up">
+    <button>Sign Up</button>
   </form>
 </div>
+  
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+
+  var form = document.getElementById('form');
+  var input = document.getElementById('input');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (input.value) {
+      socket.emit('chat message', input.value);
+      input.value = '';
+    }
+  });
+</script>
 
 </body>
 </html> 
