@@ -107,9 +107,7 @@ body {
   </form>
 </div>
   
-<script src="/socket.io/socket.io.js"></script>
 <script>
-  var socket = io();
 
   var form = document.getElementById('form');
   var input = document.getElementById('input');
@@ -117,7 +115,7 @@ body {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     if (input.value) {
-      socket.emit('chat message', input.value);
+      console.log('input.value');
       input.value = '';
     }
   });
