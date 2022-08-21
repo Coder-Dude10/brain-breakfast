@@ -4,8 +4,6 @@
   <title>Brain Breakfast</title>
   <link rel="icon" type="image/png" sizes="32x32" href="https://docs.google.com/drawings/d/e/2PACX-1vTWa6or5o7Qvk6f422AG3FtI9ZUSxAZOep3oxLX3-0-fOyWf_3cl7vCDep1AkH5viBeuIWT8GdtpoyF/pub?w=32&h=32">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<META name="description" content="Brain Breakfast is a website where you can sign up to a daily morning email that includes the current date and weather, a random fact, a motivational quote, a funny meme and more!">
-<META name="keywords" content="brain breakfast, daily morning email, email service">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora">
 </head>
 <body>
@@ -21,16 +19,17 @@ form {text-align: center;}
 }
 
 .topnav a {
-  float: left;
+  float: center;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 25px;
+  color: white;
+  padding: 10px 20px;
+  margin: 16px 0;
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: #1f45bf
 }
 
 .topnav a.active {
@@ -57,10 +56,17 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0 9px #293a73;
 }
 
 button:hover {
   background-color: #132254;
+}
+
+.button:active {
+  background-color: #0a1436;
+  box-shadow: 0 5px #293a73;
+  transform: translateY(4px);
 }
 
 div {
@@ -90,8 +96,11 @@ body {
 </head>
 <body>
 
-<div class="topnav">
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vQyHX6IKnOTVsRtSdV7xuWfFhIL5zzyvSg8u1rMpcdcTQRruHbXnhxFJ1G0Zgm-Y0Cmg0m6JNsMwaIF/pub?w=576&h=432" alt="Brain Breakfast Logo" style="width:225px;height:150px;"></a>
+<div class="topnav" style="font-family:Sora; color:white;">
+  <img src="https://docs.google.com/drawings/d/e/2PACX-1vQyHX6IKnOTVsRtSdV7xuWfFhIL5zzyvSg8u1rMpcdcTQRruHbXnhxFJ1G0Zgm-Y0Cmg0m6JNsMwaIF/pub?w=576&h=432" alt="Brain Breakfast Logo" style="width:225px;height:150px;"></a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
 </div>
 
 <div style="font-family:Sora; color:white;">
@@ -105,7 +114,7 @@ body {
    <form id="form" action="/brain-success">
     <input type="email" id="input" placeholder="youremail@domain.com">
     <br>
-    <button onClick="location.href = 'https://coder-dude10.github.io/brain-success/';">Sign Up</button>
+    <button class="button" onClick="setTimeout(myFunction, 300);">Sign Up</button>
   </form>
 </div>
   
@@ -120,6 +129,12 @@ body {
       console.log(input.value);
     }
   });
+</script>
+
+<script>
+function myFunction() {
+  window.location.href = "https://coder-dude10.github.io/brain-success/";
+}
 </script>
 
 </body>
